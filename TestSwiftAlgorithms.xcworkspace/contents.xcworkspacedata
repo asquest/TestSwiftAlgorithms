@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Algorithms/PalindromeChecker.playground">
+   </FileRef>
+   <FileRef
       location = "group:Algorithms/FibonacciSeries.playground">
    </FileRef>
 </Workspace>
