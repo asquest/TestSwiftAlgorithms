@@ -1,4 +1,5 @@
 import Foundation
+import NaturalLanguage
 
 class Stack<T: Equatable> {
     private var arr:[T] = []
@@ -42,6 +43,20 @@ func checkPalindrome<T>(characters: T) -> Bool where T: Sequence, T.Element: Equ
     return stack.isEmpty
 }
 
+func checkPhrase(unit: NLTokenUnit = .word, str: String, enableLowerCase: Bool  = false) -> [String: Bool] {
+    let newString = enableLowerCase ? str.lowercased() : str
+    let tokenizer = NLTokenizer(unit: unit)
+    let range = Range(uncheckedBounds: (lower: newString.startIndex, upper: newString.endIndex))
+    tokenizer.string = newString
+    let words = tokenizer.tokens(for: range).map { "\(newString[$0])" }
+    
+    var phrasePalindromeChecker: [String: Bool] = [:]
+    for word in words {
+        phrasePalindromeChecker[word] = checkPalindrome(characters: word)
+    }
+    return phrasePalindromeChecker
+}
+
 extension Int: Sequence, IteratorProtocol {
     public typealias Element = Int
     
@@ -63,6 +78,20 @@ checkPalindrome(characters: "12345")
 checkPalindrome(characters: "12321")
 checkPalindrome(characters: [1, 2, 3, 4, 5])
 checkPalindrome(characters: [1, 2, 3, 2, 1])
+checkPhrase(str: "madaM Anna anNa Civic racecar", enableLowerCase: true)
+checkPhrase(str: "madaM Anna anNa Civic racecar")
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
