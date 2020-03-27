@@ -1,7 +1,5 @@
 import Foundation
 
-//var str = "Hello, playground"
-//
 class Stack<T: Equatable> {
     private var arr:[T] = []
     
@@ -22,10 +20,6 @@ class Stack<T: Equatable> {
     func push(ele: T) {
         arr.append(ele)
     }
-    
-    
-    
-
 }
 
 func checkPalindrome<T>(characters: T) -> Bool where T: Sequence, T.Element: Equatable {
@@ -47,6 +41,28 @@ func checkPalindrome<T>(characters: T) -> Bool where T: Sequence, T.Element: Equ
     }
     return stack.isEmpty
 }
+
+extension Int: Sequence, IteratorProtocol {
+    public typealias Element = Int
+    
+    mutating public func next() -> Int? {
+        guard self != 0 else { return nil }
+        let remainder = self % 10
+        self = self / 10 != 0 ? self / 10 : 0
+        return remainder
+    }
+}
+
+extension Sequence {
+    var count: Int { return reduce(0) { acc, row in acc + 1 } }
+}
+
+checkPalindrome(characters: 12345)
+checkPalindrome(characters: 12321)
+checkPalindrome(characters: "12345")
+checkPalindrome(characters: "12321")
+checkPalindrome(characters: [1, 2, 3, 4, 5])
+checkPalindrome(characters: [1, 2, 3, 2, 1])
 
 
 
@@ -73,25 +89,3 @@ func checkPalindrome<T>(characters: T) -> Bool where T: Sequence, T.Element: Equ
 //    return recursiveTest(characters: characters)
 //}
 
-
-extension Int: Sequence, IteratorProtocol {
-    public typealias Element = Int
-    
-    mutating public func next() -> Int? {
-        guard self != 0 else { return nil }
-        let remainder = self % 10
-        self = self / 10 != 0 ? self / 10 : 0
-        return remainder
-    }
-}
-
-extension Sequence {
-    var count: Int { return reduce(0) { acc, row in acc + 1 } }
-}
-
-checkPalindrome(characters: 12345)
-checkPalindrome(characters: 12321)
-checkPalindrome(characters: "12345")
-checkPalindrome(characters: "12321")
-checkPalindrome(characters: [1, 2, 3, 4, 5])
-checkPalindrome(characters: [1, 2, 3, 2, 1])
