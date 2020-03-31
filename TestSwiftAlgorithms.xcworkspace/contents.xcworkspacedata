@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Algorithms/StringReverser.playground">
+   </FileRef>
+   <FileRef
       location = "group:Algorithms/AnagramFinder.playground">
    </FileRef>
    <FileRef
