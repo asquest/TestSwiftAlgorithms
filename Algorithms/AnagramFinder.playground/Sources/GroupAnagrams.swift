@@ -2,12 +2,9 @@
 
 import Foundation
 
-func groupAnagrams(_ strs: String, enableLowerCase: Bool = false) -> [[String]] {
+public func groupAnagrams(_ strs: String, enableLowerCase: Bool = false) -> [[String]] {
     let newString = enableLowerCase ? strs.lowercased() : strs
-    let tokenizer = NLTokenizer(unit: .word)
-    let range = Range(uncheckedBounds: (lower: newString.startIndex, upper: newString.endIndex))
-    tokenizer.string = newString
-    let words = tokenizer.tokens(for: range).map { "\(newString[$0])" }
+    let words = newString.words
     
     var dict: [[String.Element]: [String]] = [:]
     for word in words {
@@ -22,4 +19,4 @@ func groupAnagrams(_ strs: String, enableLowerCase: Bool = false) -> [[String]] 
     return dict.values.map { $0 }.filter { $0.count > 1}
 }
 
-groupAnagrams("The cat did listen to the silent sound and did act strange.")
+

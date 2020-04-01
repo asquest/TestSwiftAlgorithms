@@ -1,6 +1,6 @@
 import Foundation
 
-func printFibonacciNumber(n: Int) -> Int {
+public func printFibonacciNumber(n: Int) -> Int {
     var a = 0
     var b = 1
     var count = 1
@@ -15,6 +15,4 @@ func printFibonacciNumber(n: Int) -> Int {
     }
     return b
 }
-
-printFibonacciNumber(n: 5)
 

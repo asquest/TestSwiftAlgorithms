@@ -2,15 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Algorithms/StringReverser.playground">
-   </FileRef>
-   <FileRef
-      location = "group:Algorithms/AnagramFinder.playground">
-   </FileRef>
-   <FileRef
-      location = "group:Algorithms/PalindromeChecker.playground">
-   </FileRef>
-   <FileRef
       location = "group:/Users/user167484/Desktop/TestSwiftAlgorithms/Algorithms/FibonacciNumber.playground">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/user167484/Desktop/TestSwiftAlgorithms/Algorithms/PalindromeChecker.playground">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/user167484/Desktop/TestSwiftAlgorithms/Algorithms/AnagramFinder.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Algorithms/StringReverser.playground">
    </FileRef>
 </Workspace>

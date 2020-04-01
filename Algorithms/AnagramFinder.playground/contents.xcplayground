@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='macos'>
-    <pages>
-        <page name='Swapping'/>
-        <page name='Heap Algorithm'/>
-        <page name='GroupAnagrams'/>
-        <page name='BruteForcePermutations'/>
-        <page name='CheckAnagram'/>
-    </pages>
+<playground version='5.0' target-platform='macos'>
+    <timeline fileName='timeline.xctimeline'/>
 </playground>

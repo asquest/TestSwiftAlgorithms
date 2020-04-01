@@ -1,41 +1,13 @@
 import Foundation
 
 
-extension String {
-    subscript(_ index: Int) -> String {
-        get {
-            String(Array(self)[index..<index + 1])
-        }
-        
-        set(newValue) {
-            var value = Array(self)
-            value[index] = Character(newValue)
-            self = String(value)
-        }
-    }
-    
-    func swap(sourceIndex: Int, destinationIndex: Int) -> String {
-        let first = self[sourceIndex]
-        let second = self[destinationIndex]
-        
-        var copyStr = self
-        
-        copyStr[sourceIndex] = second
-        copyStr[destinationIndex] = first
-        return copyStr
-    }
-}
-
-
-func findAnagrams(word: String) -> [String] {
+public func findAnagrams(word: String) -> [String] {
     var newWord = word
     var secondVPtr = 2 {
         didSet {
-            
             if secondVPtr == word.count {
                 secondVPtr = 0
             }
-    
 //            print("SecondPtr ---> ",secondVPtr)
         }
     }
@@ -85,4 +57,4 @@ func findAnagrams(word: String) -> [String] {
 //    return wordDict.values.map { $0 }
     return wordArr
 }
-findAnagrams(word: "act")
+

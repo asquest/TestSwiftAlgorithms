@@ -23,12 +23,11 @@ func multiply( _ matrixA:[[Int64]], _ matrixB:[[Int64]]) -> [[Int64]] {
     return result
 }
 
-func fib(_ n: Int64) -> Int64 {
+public func fib(_ n: Int64) -> Int64 {
     var M: [[Int64]] = [[1, 1], [1, 0]]
     guard n > 2 else { return n }
     power(&M, n)
     return M[0][0]
-
 }
 
 func power(_ matrix: inout [[Int64]], _ n: Int64) {
@@ -40,6 +39,4 @@ func power(_ matrix: inout [[Int64]], _ n: Int64) {
         matrix = multiply(matrix, M)
     }
 }
-
-fib(90)
 

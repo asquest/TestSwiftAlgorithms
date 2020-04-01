@@ -10,34 +10,6 @@ postfix func ++(value: inout Int) {
 }
 
 extension String {
-    /// subscript to get the string from a particular index
-    private subscript(_ index: Int) -> String {
-        get {
-            String(Array(self)[index..<index + 1])
-        }
-        
-        set(newValue) {
-            var value = Array(self)
-            value[index] = Character(newValue)
-            self = String(value)
-        }
-    }
-    
-    /// Swap the two character of a string
-    /// - Parameters:
-    ///   - sourceIndex: source index of a index
-    ///   - destinationIndex: destination index of string
-    private func swap(sourceIndex: Int, destinationIndex: Int) -> String {
-        let first = self[sourceIndex]
-        let second = self[destinationIndex]
-        
-        var copyStr = self
-        
-        copyStr[sourceIndex] = second
-        copyStr[destinationIndex] = first
-        
-        return copyStr
-    }
     
     /// perform the swapping of two characters from a spific index to the further down
     /// - Parameter index: start index for swapping
